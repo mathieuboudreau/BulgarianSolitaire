@@ -1,4 +1,4 @@
-def get_search_space(totalSet):
+def get_search_space(totalInt):
 
     def _addend_search(addendSet):
         ''' Generator that returns an addend set (set of numbers which add up to a given number)
@@ -25,6 +25,6 @@ def get_search_space(totalSet):
                 if not subSet or subSet[-1] <= addendSet[-1]: # Removes duplicates, since sets of addends are same regardless of order
                     yield subSet + [addendSet[-1]]
 
-    longestAddend = [1] * totalSet; # Simplest case of set of ones which add up to totalSet.
+    longestAddend = [1] * totalInt; # Simplest case of set of ones which add up to totalInt.
 
     return list(_addend_search(longestAddend))
