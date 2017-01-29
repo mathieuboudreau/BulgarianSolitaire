@@ -18,5 +18,18 @@ class GetSeachSpaceTest(unittest.TestCase):
 
     def test_that_get_search_space_returns_the_single_value_case(self):
         self.assertTrue([5] in bs.get_search_space(5))
+
     def test_that_get_search_space_returns_the_recursive_cases(self):
         self.assertTrue([1, 2, 2] in bs.get_search_space(5))
+
+    # Ensure no duplicates in set
+    def test_that_get_search_space_returns_no_duplicates(self):
+
+        searchList = bs.get_search_space(5)
+        uniquesList = []
+        for elem in searchList:
+            elem = sorted(elem) # Sets are equal regardless of order for our purpose
+            if elem not in uniquesList:
+                uniquesList.append(elem)
+
+        self.assertTrue(len(uniquesList)==len(searchList))
