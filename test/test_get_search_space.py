@@ -18,3 +18,5 @@ class GetSeachSpaceTest(unittest.TestCase):
 
     def test_that_get_search_space_returns_the_single_value_case(self):
         self.assertTrue([5] in bs.get_search_space(5))
+    def test_that_get_search_space_returns_the_recursive_cases(self):
+        self.assertTrue([1, 2, 2] in bs.get_search_space(5))

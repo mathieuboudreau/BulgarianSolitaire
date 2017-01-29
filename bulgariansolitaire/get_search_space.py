@@ -19,7 +19,9 @@ def get_search_space(totalSet):
             # 2 or more
             addendSet = addendSet[:-2] + [addendSet[-2] + addendSet[-1]]
 
-            yield addendSet
+            # Recursively generate subsets of addend
+            for subSet in _addend_search(addendSet[:-1]):
+                yield subSet + [addendSet[-1]]
 
     longestAddend = [1] * totalSet; # Simplest case of set of ones which add up to totalSet.
 
