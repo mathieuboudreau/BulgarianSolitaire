@@ -11,3 +11,7 @@ class GetSeachSpaceTest(unittest.TestCase):
     # Return Types
     def test_that_get_search_space_returns_list(self):
         assert isinstance(bs.get_search_space(1), list)
+
+    # Return Types
+    def test_that_get_search_space_returns_the_longest_set_case(self):
+        self.assertTrue([1,1,1,1] in bs.get_search_space(4))
