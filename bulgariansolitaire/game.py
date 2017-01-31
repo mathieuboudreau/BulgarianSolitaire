@@ -9,8 +9,9 @@ class Game:
         numCards: Positive integer that represents the number of cards used in the game.
         gameHistory: List containing all the pileSets (lists) of the most recent games for each step until convergence.
     '''
-    def __init__(self, numCards):
-        self.numCards = numCards
+    def __init__(self, *args):
+        if args:
+            self.numCards = args[0]
         self.reset_history()
 
     def reset_history(self):
