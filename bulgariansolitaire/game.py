@@ -55,7 +55,7 @@ class Game:
 
         newSet = []
 
-        while(newSet != self.gameHist[-1] and newSet not in self.gameHist):
+        while(newSet not in self.gameHist):
 
             if newSet: # Required so that the first set isn't saved twice
                 self.gameHist.append(newSet)
