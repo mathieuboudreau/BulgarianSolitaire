@@ -17,6 +17,10 @@ class Game:
     def reset_history(self):
         self.gameHist = []
 
+    def print_history(self):
+        for pile in self.gameHist:
+            print(pile)
+
     def remove_empty_piles(self, pileSet):
         newSet = list(filter((0).__ne__, pileSet))
         return newSet
