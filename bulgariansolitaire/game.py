@@ -34,8 +34,7 @@ class Game:
             print(pile)
 
     def remove_empty_piles(self, pileSet):
-        newSet = list(filter((0).__ne__, pileSet))
-        return newSet
+        return list(filter((0).__ne__, pileSet))
 
     def run(self, pileSet):
         ''' Run a Bulgarian Solitaire game.
