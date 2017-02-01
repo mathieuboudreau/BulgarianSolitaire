@@ -40,7 +40,7 @@ class Game:
         for pile in self.gameHist:
             print(pile)
 
-    def remove_empty_piles(self, pileSet):
+    def remove_empty_piles(pileSet):
         return list(filter((0).__ne__, pileSet))
 
     def run(self, pileSet):
@@ -54,7 +54,7 @@ class Game:
         '''
         self.numCards = sum(pileSet)
  
-        pileSet = self.remove_empty_piles(pileSet)
+        pileSet = Game.remove_empty_piles(pileSet)
         pileSet = sorted(pileSet)
 
         self.reset_history()
@@ -70,7 +70,7 @@ class Game:
             # Remove 1 card from each pile, and form a new pile
             newPile = len(pileSet)
             newSet = [x - 1 for x in pileSet]
-            newSet = self.remove_empty_piles(newSet)
+            newSet = Game.remove_empty_piles(newSet)
             bisect.insort(newSet, newPile)
 
             # Save as the pileSet, if needed for next iteration
