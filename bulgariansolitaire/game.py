@@ -1,3 +1,4 @@
+import bisect
 
 class Game:
     '''Bulgarian Solitaire game class.
@@ -63,11 +64,8 @@ class Game:
             # Remove 1 card from each pile, and form a new pile
             newPile = len(pileSet)
             newSet = [x - 1 for x in pileSet]
-            newSet.append(newPile)
             newSet = self.remove_empty_piles(newSet)
-
-            # Sort the piles
-            newSet = sorted(newSet)
+            bisect.insort(newSet, newPile)
 
             # Save as the pileSet, if needed for next iteration
             pileSet = newSet
