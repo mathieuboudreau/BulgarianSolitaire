@@ -3,6 +3,12 @@ import bisect
 class Game:
     '''Bulgarian Solitaire game class.
 
+    Bulgarian Solitaire is played as follows: a fixed number of playing cards is divided into several piles. The quantity of 
+    cards per pile is up to the player's choice. Then at each turn, one card is removed from each pile and are placed in a 
+    separate pile. Piles of zero cards are ignored, and the piles of cards are sorted from lowest to highest number of cards.
+
+    The game ends once the next set of piles was already played in one of the previous moves.
+
     --initializer args--
         (optional) 1st arg: Positive integer that represents the number of cards used in the game. 
 
