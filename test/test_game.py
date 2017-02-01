@@ -18,3 +18,8 @@ class GameTest(unittest.TestCase):
     def test_that_remove_empty_piles_removes_zeros_from_list(self):
         self.assertEqual(bs.Game.remove_empty_piles([1, 0, 3, 0, 0, 2]), [1, 3, 2])
         
+    def test_that_known_triagular_number_of_cards_returns_gameHist_with_expected_last_move(self):
+        gameSession = bs.Game()
+        gameHistory = gameSession.run([1, 2, 1, 1, 5])
+
+        self.assertEqual(gameHistory[-1], [1, 2, 3, 4])
