@@ -19,7 +19,7 @@ The package was tested for the following Python version:
 
 Download and unzip repository, or clone using the following command in a terminal in the directory you want to install:
 
-`git clone https://github.com/mathieuboudreau/pyMincHeader.git`
+`git clone https://github.com/mathieuboudreau/BulgarianSolitaire`
 
 ## Tests
 
