@@ -23,3 +23,12 @@ class GameTest(unittest.TestCase):
         gameHistory = gameSession.run([1, 2, 1, 1, 5])
 
         self.assertEqual(gameHistory[-1], [1, 2, 3, 4])
+
+    def test_that_reset_history_call_creates_empty_list_after_a_game_was_played(self):
+
+        gameSession = bs.Game()
+        gameHistory = gameSession.run([10])
+
+        self.assertTrue(gameSession.gameHist)
+        gameSession.reset_history()
+        self.assertFalse(gameSession.gameHist)
