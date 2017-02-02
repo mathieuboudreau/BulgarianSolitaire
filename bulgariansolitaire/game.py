@@ -19,8 +19,9 @@ class Game:
     --methods--
         run(pileSet): Executes a Bultarian Solitaire game with the starting piles of cards described by the argument (list of 
                       integers). Zero piles are ignored. The history of the card piles following each game loop are saved in 
-                      the class variable "gameHistory" as a list of lists, and is also returned by the method call. Each
-                      call of run will reset the previous gameHistory variable prior to saving the current game.
+                      the class variable "gameHistory" as a list of lists. The converged solution (either a single pile or a 
+                      set of piles that loop) is returned by the method call. Each call of run will reset the previous 
+                      gameHistory variable prior to saving the current game.
 
                       Example: run([1 9 10]) will run a Bulgarian Solitaire games using 20 cards, using three piles (1, 9,
                       and 10 card tall).
@@ -47,7 +48,7 @@ class Game:
         ''' Run a Bulgarian Solitaire game.
         
         Each game step until the solution is saved in the instance variable "gameHist".
-        Returns self.gameHist
+        Returns the converged solution (either a single pile or a set of piles that loop).
         
         --args--
             pileSet: list of integers that represents the piles of cards.
@@ -76,4 +77,4 @@ class Game:
             # Save as the pileSet, if needed for next iteration
             pileSet = newSet
 
-        return self.gameHist
+        return self.gameHist[self.gameHist.index(newSet):]
