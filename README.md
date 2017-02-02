@@ -38,11 +38,11 @@ import bulgariansolitaire as bs
 
 bsGame = bs.Game();
 
-gameloSolution = bsGame.run([1, 8, 2, 9]);
+gameSolution = bsGame.run([1, 8, 2, 9]);
 ```
 
 The converged solution (either a single pile or a set of piles that loop) are returned by the run call (saved here in 
-gameloSolution). The history of moves for the previously played game is stored in the `Game` object parameter `gameHist`.
+gameSolution). The history of moves for the previously played game is stored in the `Game` object parameter `gameHist`.
 
 To view the set of piles for the previously played game in a more human-friendly format than a list of lists, you can call
 the following method:
